@@ -1,0 +1,74 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('wallpaper.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    color: #000; /* Warna teks default */
+    transition: background 0.5s, color 0.5s; /* Transisi halus saat berganti mode */
+}
+
+button#theme-toggle {
+    
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: rgb(255, 255, 255); /* Semi-transparan white background */
+    color: #000;
+    transition: background-color 0.5s, color 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.blurred-background {
+    width: auto;
+    height: auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparan white background */
+    border-radius: 15px;
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    transition: background 0.5s, border 0.5s, box-shadow 0.5s; /* Transisi halus saat berganti mode */
+}
+
+.blurred-background p {
+    color: #000; /* Warna teks default dalam blur background */
+    font-size: 1.2em;
+    text-align: justify;
+    z-index: 2;
+    position: relative;
+    margin: 0;
+    transition: color 0.5s; /* Transisi halus saat berganti mode */
+}
+
+/* Mode Gelap */
+body.dark-mode, html.dark-mode {
+    background: url('dark.jpg') no-repeat center center/cover;
+    color: #fff; /* Warna teks untuk mode gelap */
+}
+
+body.dark-mode button#theme-toggle {
+    background: rgb(0, 0, 0);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .blurred-background {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparan black background */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .blurred-background p {
+    color: #fff; /* Warna teks dalam blur background untuk mode gelap */
+}
+
